@@ -1,0 +1,43 @@
+$white: #fff;
+$light-blue: #37FDE8;
+$gris: rgba(255, 255, 255, 0.1);
+$gris2: rgba(255, 255, 255, 0.5);
+$sombra-color: rgba(0, 0, 0, 0.3);
+
+$colores:(
+    white: #fff,
+    light-blue: #37FDE8,
+    gris: rgba(255, 255, 255, 0.1),
+    gris2: rgba(255, 255, 255, 0.5),
+    sombra-color: rgba(0, 0, 0, 0.3),
+);
+$btn1:(
+    text-decoration: none,
+    color: $white,
+    font-weight: 700,
+    width: 150px,
+    height: 55px,
+    border-radius: 15px,
+    background-color: $gris,
+    display: flex,
+    justify-content: center,
+    align-items: center,
+    border-top: 1px solid $gris2,
+    border-left: 1px solid $gris2,
+    backdrop-filter: blur(5px),
+    box-shadow: 5px 5px 12px $sombra-color,
+    transition: all 1s,
+);
+$btn2: (
+    color: rgb(0, 0, 0),
+    font-weight: 700,
+    width: 93px,
+    height: 26px,
+    border-radius: 20px,
+    background-color: $light-blue,
+    display: flex,
+    justify-content: center,
+    align-items: center,
+    text-decoration: none,
+    font-size: 0.9rem,
+);

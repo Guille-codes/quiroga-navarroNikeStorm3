@@ -1,0 +1,210 @@
+@import "variables";
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(../img/Fondo2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.navbar-toggler{
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+.navbar ul li{
+    position: relative;
+    a{
+        font-family: 'Open Sans', sans-serif;
+        color: $white;
+        font-weight: 300;
+        text-decoration: none;
+    }
+    &:after{
+        content: "";
+        height: 4px;
+        width: 0;
+        background-color: $light-blue;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 50%;
+        transition: all 0.5s;
+        will-change: width;
+    }
+    &:hover:after{
+        width: 100%;
+        right: 0;
+    }
+}
+main{
+    font-family: 'Montserrat', sans-serif;
+    color: $white;
+    font-size: 0.9rem;
+    span{
+        color: $light-blue;
+    }
+}
+.main-snikers img{
+    transition: all 1s;
+    &:hover{
+        transform: scale(1.01) translate(10px, 12px);
+    }
+}
+.coleccion-article{
+    transition: all 1s;
+    &:hover{
+        transform: translate(10px, 5px);
+    }
+}
+.join-conteiner{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto;
+    column-gap: 12px;
+    row-gap: 12px;
+    grid-template-areas: "article1 article1 article1 article5"
+                        "article2 article3 article4 article5";
+}
+.article1{
+    grid-area: article1;
+    transition: all 1s;
+    &:hover{
+        grid-area: article1;
+        transform: scale(1.01);
+    }
+}
+.article2{
+    grid-area: article2;
+    transition: all 1s;
+    &:hover{
+        grid-area: article2;
+        transform: scale(1.01);
+    }
+}
+.article3{
+    grid-area: article3;
+    transition: all 1s;
+    &:hover{
+        grid-area: article3;
+        transform: scale(1.01);
+    }
+}
+.article4{
+    grid-area: article4;
+    transition: all 1s;
+    &:hover{
+        grid-area: article4;
+        transform: scale(1.01);
+    }
+}
+.article5{
+    grid-area: article5;
+    transition: all 1s;
+    &:hover{
+        grid-area: article5;
+        transform: scale(1.01);
+    }
+}
+.main-shop--image{
+    transition: all 1s;
+    &:hover{
+        transform: scale(1.02);
+    }
+}
+.main-shop4{
+    p{
+        font-size: 3rem;
+    }
+    a {
+    color: $light-blue;
+    text-decoration: none;
+    }
+}
+.main-shop5 p{
+    font-size: 0.9rem;
+}
+.main-shop6{
+    font-weight: 700;
+    width: 280px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: $light-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+footer{
+    margin-top: auto;
+    a{
+        text-decoration: none;
+    }
+}
+@each $clave, $var in $colores {
+    .btn-#{$clave}{
+        background-color: $var;
+    }
+}
+.btn1 a{
+    text-decoration: map-get($btn1, text-decoration);
+    color: map-get($btn1, color);
+    font-weight: map-get($btn1, font-weight);
+    width: map-get($btn1, width);
+    height: map-get($btn1, height);
+    border-radius: map-get($btn1, border-radius);
+    background: map-get($btn1, background-color);
+    display: map-get($btn1, display);
+    justify-content: map-get($btn1, justify-content);
+    align-items: map-get($btn1, align-items);
+    border-top: map-get($btn1, border-top);
+    border-left: map-get($btn1, border-left);
+    backdrop-filter: map-get($btn1, backdrop-filter);
+    box-shadow: map-get($btn1, box-shadow);
+    transition: map-get($btn1, transition);
+}
+.btn2 a{
+    color: map-get($btn2 , color);
+    font-weight: map-get($btn2 , font-weight);
+    width: map-get($btn2 , width);
+    height: map-get($btn2 , height);
+    border-radius: map-get($btn2 , border-radius);
+    background-color: map-get($btn2 , background-color);
+    display: map-get($btn2 , display);
+    justify-content: map-get($btn2 , justify-content);
+    align-items: map-get($btn2 , align-items);
+    text-decoration: map-get($btn2 , text-decoration);
+    font-size: map-get($btn2 , font-size);
+}
+.btn3{
+    @extend .main-shop6;
+    color: rgb(0, 0, 0);
+}
+@mixin PropiedadesFlex ($display, $justify, $margin-top){
+    display: $display;
+    justify-content: $justify;
+    margin-top: $margin-top;
+}
+.btn1{
+    @include PropiedadesFlex(flex, center, 40px);
+    a{
+        &:hover{
+            transform: scale(1.1);
+        }
+        img{
+            width: 25px;
+            height: 25px;
+            margin-left: 9px;
+        }
+    }
+}
